@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="收件人/抄送人控件,spinner提示自动补全"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_copier_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:padding="8dp"
+        android:text="抄送人："
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@+id/tip" />
+
+    <com.guoqi.copierview.autocomplete.ContactsCompletionView
+        android:id="@+id/auto_copier"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:background="@drawable/bg_gray_white"
+        android:focusableInTouchMode="true"
+        android:hint="请输入"
+        android:imeOptions="actionDone"
+        android:inputType="text|textNoSuggestions|textMultiLine"
+        android:lineSpacingExtra="1dp"
+        android:nextFocusDown="@+id/editText"
+        android:padding="8dp"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toRightOf="@+id/tv_copier_text"
+        app:layout_constraintStart_toEndOf="@+id/tv_copier_text"
+        app:layout_constraintTop_toBottomOf="@+id/tip"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="291dp"
+        android:layout_height="47dp"
+        android:layout_marginTop="8dp"
+        android:text='测试数据为用户1~用户10,输入"用户"自动提示\n可以设置allowCollapse(true)不换行'
+        app:layout_constraintStart_toStartOf="@+id/auto_copier"
+        app:layout_constraintTop_toBottomOf="@+id/auto_copier" />
+
+</android.support.constraint.ConstraintLayout>
